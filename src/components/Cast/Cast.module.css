@@ -1,0 +1,15 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.card {
+    max-width: 150px;
+    padding: 10px;
+    background-color: rgba(255, 166, 0, 0.714);
+    border-radius: 5px;
+}
+
