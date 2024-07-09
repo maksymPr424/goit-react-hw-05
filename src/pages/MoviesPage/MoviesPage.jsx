@@ -31,7 +31,7 @@ export default function MoviesPage() {
       }
     };
     getFilms();
-  }, [query]);
+  }, [query, searchParams]);
 
   return (
     <div>

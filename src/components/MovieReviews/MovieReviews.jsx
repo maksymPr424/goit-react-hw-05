@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getFilmMoreInfo } from "../../films-api";
-import ReviewsItem from "../ReviewsItem/ReviewsItem";
+import ReviewsItem from "../MovieReviewsItem/MovieReviewsItem";
 
-import css from "./Reviews.module.css";
+import css from "./MovieReviews.module.css";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 export default function Reviews() {

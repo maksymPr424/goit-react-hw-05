@@ -1,4 +1,4 @@
-import css from "./ReviewsItem.module.css";
+import css from "./MovieReviewsItem.module.css";
 
 export default function ReviewsItem({ author, content }) {
   return (

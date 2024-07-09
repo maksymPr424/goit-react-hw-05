@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getFilmById } from "../../films-api";
 import AboutMovie from "../../components/AboutMovie/AboutMovie";
 import { useLocation, useParams, Outlet, NavLink } from "react-router-dom";
@@ -7,9 +7,10 @@ import css from "./MovieDetailsPage.module.css";
 import clsx from "clsx";
 
 export default function MovieDetailsPage() {
-  const { movieId } = useParams();
+  const { movieId } = useParams();  
   const location = useLocation();
-  const backLinkHref = location.state ?? "/movies";
+  const backLinkHref = useRef(location.state ?? "/movies");
+  console.log(backLinkHref);
 
   const linkClass = ({ isActive }) => {
     return clsx(css.link, isActive && css.active);
@@ -31,7 +32,7 @@ export default function MovieDetailsPage() {
 
   return (
     <div className={css.container}>
-      <BackLink link={backLinkHref}>Go Back!</BackLink>
+      <BackLink link={backLinkHref.current}>Go Back!</BackLink>
       <AboutMovie movie={filmById} />
       <ul className={css.links}>
         <li>

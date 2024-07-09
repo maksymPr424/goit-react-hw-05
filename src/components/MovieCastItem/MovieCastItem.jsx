@@ -1,4 +1,4 @@
-import css from './CastItem.module.css'
+import css from "./MovieCastItem.module.css";
 
 export default function CastItem({ imageLink, name, character }) {
   return (

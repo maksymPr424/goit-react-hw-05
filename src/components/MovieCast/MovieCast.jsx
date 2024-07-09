@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getFilmMoreInfo } from "../../films-api";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
-import CastItem from "../CastItem/CastItem";
+import CastItem from "../MovieCastItem/MovieCastItem";
 
-import css from "./Cast.module.css";
+import css from "./MovieCast.module.css";
 
 export default function Cast() {
   const { movieId } = useParams();
