@@ -41,9 +41,7 @@ export const getFilmById = async (id) => {
 
 export const getFilmMoreInfo = async (id, query) => {
   try {
-    const additional = query === "cast" ? "credits" : "reviews";
-
-    const film = await axios(`/movie/${id}/${additional}`, {
+    const film = await axios(`/movie/${id}/${query}`, {
       headers: {
         Authorization: `Bearer ${keyAuthorization}`,
       },

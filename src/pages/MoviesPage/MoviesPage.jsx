@@ -18,6 +18,7 @@ export default function MoviesPage() {
       try {
         const films = await getFilmByQuery(searchParams.get("query"));
         setFilmByQuery(films);
+        console.log(films);
       } catch (error) {
         console.log(error);
       }

@@ -14,7 +14,7 @@ export default function Cast() {
   useEffect(() => {
     const getFilm = async () => {
       try {
-        const film = await getFilmMoreInfo(movieId, "cast");
+        const film = await getFilmMoreInfo(movieId, "credits");
         setFilmInfo(film.cast);
       } catch (error) {
         console.log(error);

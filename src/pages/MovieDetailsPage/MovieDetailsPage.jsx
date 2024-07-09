@@ -7,7 +7,7 @@ import css from "./MovieDetailsPage.module.css";
 import clsx from "clsx";
 
 export default function MovieDetailsPage() {
-  const { movieId } = useParams();  
+  const { movieId } = useParams();
   const location = useLocation();
   const backLinkHref = useRef(location.state ?? "/movies");
 
@@ -42,6 +42,11 @@ export default function MovieDetailsPage() {
         <li>
           <NavLink className={linkClass} to="reviews">
             Reviews
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className={linkClass} to="recommendation">
+            Recommendation
           </NavLink>
         </li>
       </ul>

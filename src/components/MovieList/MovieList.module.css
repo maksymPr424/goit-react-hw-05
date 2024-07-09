@@ -1,20 +1,17 @@
-.list {
-  padding: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+.swiper {
+  margin: 30px 0;
+  background-color: #ffa60021;
+  text-align: center;
 }
 
 .item {
-  max-width: 200px;
-  width: 100%;
   padding: 20px;
-  background-color: rgba(255, 166, 0, 0.556);
   border-radius: 5px;
-  transition: transform 0.5 ease-in-out;
+  height: 100%;
+  margin: 20px 0 30px;
 }
 
 .item:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
+  background-color: orange;
 }
