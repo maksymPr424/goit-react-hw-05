@@ -10,7 +10,6 @@ export default function MovieDetailsPage() {
   const { movieId } = useParams();  
   const location = useLocation();
   const backLinkHref = useRef(location.state ?? "/movies");
-  console.log(backLinkHref);
 
   const linkClass = ({ isActive }) => {
     return clsx(css.link, isActive && css.active);
