@@ -6,36 +6,28 @@ import MovieList from "../../components/MovieList/MovieList.jsx";
 import { useSearchParams } from "react-router-dom";
 
 export default function MoviesPage() {
-  const [searchParams, getSearchParams] = useSearchParams();
-
-  const initialQuery = searchParams.get("query") || "";
-
-  const [query, setQuery] = useState(initialQuery);
+  const [searchParams, setSearchParams] = useSearchParams();
   const [filmByQuery, setFilmByQuery] = useState([]);
 
-  const submitForm = (query) => {
-    getSearchParams({ query });
-    setQuery(query);
-  };
-
   useEffect(() => {
-    if (query === "") {
+    if (searchParams.size === 0) {
       return;
     }
+
     const getFilms = async () => {
       try {
-        const films = await getFilmByQuery(query);
+        const films = await getFilmByQuery(searchParams.get("query"));
         setFilmByQuery(films);
       } catch (error) {
         console.log(error);
       }
     };
     getFilms();
-  }, [query, searchParams]);
+  }, [searchParams]);
 
   return (
     <div>
-      <SearchBar onSubmit={submitForm} />
+      <SearchBar onSubmit={setSearchParams} />
       <MovieList movies={filmByQuery} />
     </div>
   );
