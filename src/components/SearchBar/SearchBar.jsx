@@ -11,7 +11,7 @@ export default function SearchBar({ onSubmit }) {
     if (query === "") {
       return;
     }
-    onSubmit({ query });
+    onSubmit(query);
     actions.resetForm();
   };
 

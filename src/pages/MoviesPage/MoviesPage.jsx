@@ -9,6 +9,11 @@ export default function MoviesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [filmByQuery, setFilmByQuery] = useState([]);
 
+  const setParams = (value) => {
+    searchParams.set("query", value);
+    setSearchParams(searchParams);
+  };
+
   useEffect(() => {
     if (searchParams.size === 0) {
       return;
@@ -18,7 +23,6 @@ export default function MoviesPage() {
       try {
         const films = await getFilmByQuery(searchParams.get("query"));
         setFilmByQuery(films);
-        console.log(films);
       } catch (error) {
         console.log(error);
       }
@@ -28,7 +32,7 @@ export default function MoviesPage() {
 
   return (
     <div>
-      <SearchBar onSubmit={setSearchParams} />
+      <SearchBar onSubmit={setParams} />
       <MovieList movies={filmByQuery} />
     </div>
   );
