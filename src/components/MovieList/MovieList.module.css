@@ -1,17 +1,33 @@
+.container {
+  margin: 30px auto;
+  height: 50vh;
+  width: 100vw;
+}
+
+@media (min-width: 765px) {
+  .container {
+    height: 50vh;
+    width: 60vw;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    height: 50vh;
+    width: 40vw;
+  }
+}
+
 .swiper {
-  margin: 30px 0;
-  background-color: #ffa60021;
   text-align: center;
 }
 
 .item {
-  padding: 20px;
   border-radius: 5px;
-  height: 100%;
   margin: 20px 0 30px;
+  background-color: rgba(255, 166, 0, 0.279);
 }
 
 .item:hover {
-  transform: scale(1.02);
-  background-color: orange;
+  transform: scale(1.03);
 }

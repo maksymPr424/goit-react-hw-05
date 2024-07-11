@@ -8,12 +8,11 @@
 
 .image {
   height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .link {
   text-decoration: none;
 }
 
-.titleFilm:hover {
-  color: orange;
-}
